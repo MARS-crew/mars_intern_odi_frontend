@@ -1,9 +1,11 @@
 // ** RN Imports
 import { Alert } from 'react-native'
 
+// ** React Imports
+import { useState } from 'react'
+
 // ** Other View Imports
 import LoginScreenView from 'pages/login/login'
-import { useState } from 'react'
 
 // ** Rtk Query Imports
 import { useLoginMutation } from '../../services'
@@ -18,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     if (id === '' || password === '') {
-      Alert.alert('ID와 Password를 입력해주세요.')
+      Alert.alert('id와 password를 입력해주세요.')
 
       return
     }
@@ -26,7 +28,6 @@ const LoginScreen = ({ navigation }) => {
     loginApi({ id, password })
       .unwrap()
       .then(res => {
-        console.log(res)
         if (res.status === 200) {
           Alert.alert('로그인 성공!')
 

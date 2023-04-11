@@ -7,7 +7,7 @@ import styles from './style'
 const LoginScreenView = ({ handleMoveRegister, handleLogin, id, setId, password, setPassword }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.topBox}>{/* <Image source={require('../../../assets/Login.png')} /> */}</View>
+      <View style={styles.topBox} />
       <View style={styles.bottomBox}>
         <Text style={styles.bottomBoxLabel}>id</Text>
         <TextInput style={styles.bottomBoxInput} value={id} onChangeText={setId} />
