@@ -4,13 +4,13 @@ import { fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // ** Other Imports
 import { Mutex } from 'async-mutex'
 
-const baseUrl = '/api'
+const baseUrl = 'https://mbti.pinodev.shop/api/'
 
 const baseQuery = fetchBaseQuery({
   prepareHeaders: (headers, { getState }) => {
     return headers
   },
-  baseUrl,
+  baseUrl
 })
 
 const mutex = new Mutex()

@@ -5,5 +5,5 @@ export const api = createApi({
   reducerPath: 'api',
   baseQuery: customFetchBase,
   keepUnusedDataFor: 5,
-  endpoints: () => ({}),
+  endpoints: () => ({})
 })

@@ -4,17 +4,14 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 // ** Other Imports
 import { middleware } from './middleware'
 import auth from './auth'
+import { api } from '../services'
 
 const reducer = combineReducers({
-  auth,
+  [api.reducerPath]: api.reducer,
+  auth
 })
 
 export const store = configureStore({
   reducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [],
-      },
-    }).concat(middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middleware)
 })

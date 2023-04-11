@@ -5,15 +5,15 @@ const initialState = {
   user: {
     name: '',
     authToken: '',
-    refreshToken: '',
-  },
+    refreshToken: ''
+  }
 }
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {},
-  extraReducers: (builder) => {},
+  extraReducers: builder => {}
 })
 
 export default authSlice.reducer
